@@ -1,0 +1,12 @@
+generateApi({
+    codeGenConstructs: (struct) => ({
+        Keyword: {
+            Object: "Record<string, any>",
+        }
+    }),
+    primitiveTypeConstructs: (struct) => ({
+        string: {
+            "date-time": "Date",
+        },
+    })
+})
