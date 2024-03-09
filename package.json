@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate-templates": "npx swagger-typescript-api generate-templates -o ./src/templates",
-    "generate-v1": "npx swagger-typescript-api -t ./src/my-templates -p ./src/backend/swagger.yaml -o ./src -n generated-api-v1.ts",
+    "generate-templates": "npx swagger-typescript-api generate-templates -o ./src/templates -m --http-client axios",
+    "generate-v0": "npx swagger-typescript-api -p ./src/backend/swagger.yaml -o ./src -n generated-api-v1.ts --axios -t ./src/templates",
+    "generate-v1": "npx swagger-typescript-api -p ./src/backend/swagger.yaml -o ./src/generated --modular --axios",
     "generate-v2": "npx openapi-typescript ./src/backend/swagger.yaml -o ./src/generated-api-v2.d.ts",
     "generate-v3": "orval --config ./orval.config.js"
   },
